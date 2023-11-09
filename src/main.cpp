@@ -3,6 +3,7 @@
 #include <vector>
 #ifdef RLE
 #include "rle.h"
+#include "rle_routine.h"
 #elif HUFFMAN_CODE
 #include "huffman_coding.h"
 #elif DEFLATE
@@ -36,18 +37,7 @@ void setup() {
   dataFile.close();
 
 #ifdef RLE
-  Serial.println("Dados originais:");
-  Serial.println(input);
-
-  // Comprimir dados
-  String compressedData = rle_compress(input.c_str());
-  Serial.println("Dados comprimidos:");
-  Serial.println(compressedData.c_str());
-
-  Descomprimir dados
-  String decompressedData = rle_decompress(compressedData.c_str());
-  Serial.println("Dados descomprimidos:");
-  Serial.println(decompressedData.c_str());
+  rle_routine();
 #elif HUFFMAN_CODE
   HuffmanCompression huffman;
   huffman.compressAndDecompress(input);
