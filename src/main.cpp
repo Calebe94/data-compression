@@ -22,19 +22,19 @@ void setup() {
     return;
   }
 
-  File dataFile = SPIFFS.open("/data.csv", "r");
-  if (!dataFile) {
-    Serial.println("Falha ao abrir o arquivo CSV na memória flash");
-    return;
-  }
+  // File dataFile = SPIFFS.open("/data.csv", "r");
+  // if (!dataFile) {
+  //   Serial.println("Falha ao abrir o arquivo CSV na memória flash");
+  //   return;
+  // }
 
-  String input = "";
-  while (dataFile.available()) {
-    char c = dataFile.read();
-    input += c;
-  }
+  // String input = "";
+  // while (dataFile.available()) {
+  //   char c = dataFile.read();
+  //   input += c;
+  // }
 
-  dataFile.close();
+  // dataFile.close();
 
 #ifdef RLE
   rle_routine();
