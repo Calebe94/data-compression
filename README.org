@@ -1,0 +1,50 @@
+#+title: README
+
+* Metodologia
++ Taxa de Compressão: Avaliação da eficácia da técnica na redução do tamanho dos dados.
++ Velocidade de Compressão: Tempo necessário para comprimir os dados.
++ Velocidade de Descompressão: Tempo necessário para descomprimir os dados.
++ Perda de Dados: Determinação se a técnica gera perda de dados durante a compressão.
++ Aplicabilidade: Identificação dos tipos de dados mais adequados para a técnica.
+
+* Algoritmos Comparados
+
+** Codificação de Execução (Run-Length Encoding - RLE)
++ Forças: Effective for data with long runs of repeated values, simple implementation [1].
++ Fraquezas: Limited compression potential for complex data with minimal redundancy [1].
++ Aplicações: Adequado para gráficos simples, imagens binárias e cenários com dados altamente repetitivos [1].
+
++ Código: [[file:lib/rle/][lib/rle]]
+
+** Codificação de Huffman (Huffman Coding):
++ Forças: Eficiente para compressão de texto e dados em geral, adaptativo à distribuição dos dados [1].
++ Fraquezas: Pode não ser a melhor opção para dados altamente estruturados. Processamento de codificação e decodificação mais lento em comparação com métodos mais simples [1].
++ Aplicações: Ampla utilização em compressão de texto e dados em geral [1].
+
++ Código: [[file:lib/huffmancoding/][lib/huffmancoding]]
+
+** Compressão Deflate:
++ Forças: Compressão versátil que combina LZ77 e codificação de Huffman. Equilibra a taxa de compressão e a velocidade eficazmente [3].
++ Fraquezas: Pode não alcançar as maiores taxas de compressão em alguns casos [3].
++ Aplicações: Comumente usado em arquivamento de arquivos (ZIP) e compressão de conteúdo da web (gzip) [3].
+
++ Código: [[file:lib/deflate/][lib/deflate]]
+
+** Lempel-Ziv-Welch (LZW):
++ Forças: Eficaz para texto e imagens simples, adequado para dados estruturados [2].
++ Fraquezas: Pode não proporcionar a melhor compressão para dados complexos. Restrições de patente [1][2].
++ Aplicações: GIF (Graphics Interchange Format), TIFF (Tagged Image File Format) [1][2].
+
++ Código: [[file:lib/lzw/][lib/lzw]]
+
+* Referências:
+1. Smith, D. C., & Marques, P. (2019). Data Compression: Principles and Practice. Morgan Kaufmann.
+2. Sayood, K. (2002). Introduction to Data Compression. Morgan Kaufmann.
+3. Salomon, D. (2007). Data Compression: The Complete Reference. Springer.
+4. Nelson, M., & Gailly, J. L. (1995). The Data Compression Book. M&T Books.
+5. ITU-T Recommendation T.81 (1992). "Digital Compression and Coding of Continuous-Tone Still Images—Requirements and Guidelines."
+6. ISO/IEC 11172-3 (1993). "Information Technology – Coding of Moving Pictures and Associated Audio for Digital Storage Media at up to About 1.5 Mbit/s – Part 3: Audio."
+7. ISO/IEC 13818-2 (2000). "Information Technology – Generic Coding of Moving Pictures and Associated Audio Information: Video."
+8. Gersho, A., & Gray, R. M. (2012). Vector Quantization and Signal Compression. Springer Science & Business Media.
+9. Taubman, D. S., & Marcellin, M. W. (2002). JPEG2000: Image Compression Fundamentals, Standards and Practice. Kluwer Academic Publishers.
+10. Petitcolas, F. A. P. (1999). Watermarking Schemes Evaluation. In Proceedings of the IEEE (Vol. 87, No. 7, pp. 1127-1141).
