@@ -25,4 +25,7 @@ unpack: ${DATA_DIR}
 
 extract: get_fs unpack
 
+erase:
+	pio run --target erase
+
 .PHONY: compile flash partition monitor get_fs unpack extract
