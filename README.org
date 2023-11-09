@@ -7,6 +7,12 @@
 + Perda de Dados: Determinação se a técnica gera perda de dados durante a compressão.
 + Aplicabilidade: Identificação dos tipos de dados mais adequados para a técnica.
 
+* Dados
+
+Os dados utilizados como demonstração nesse projeto, foram retirados do site [[https://portal.inmet.gov.br/dadoshistoricos][Instituto Nacional de Meteorologia - INMET]]. Os dados são do ano de 2022 da cidade de Curitiba-PR.
+
+O arquivo foi renomeado de ~INMET_S_PR_A807_CURITIBA_01-01-2022_A_31-12-2022.CSV~ para [[file:data/data.csv][data/data.csv]].
+
 * Algoritmos Comparados
 
 ** Codificação de Execução (Run-Length Encoding - RLE)
